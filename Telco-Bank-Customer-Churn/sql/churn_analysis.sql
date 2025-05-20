@@ -77,3 +77,111 @@ FROM customers c
 JOIN churn_records cr ON c.customer_id = cr.customer_id
 GROUP BY c.gender, cr.is_churned;
 
+
+--11. Churn by Contract Type
+ SELECT 
+    c.contract, 
+    cr.is_churned, 
+    COUNT(*)
+FROM customers c
+JOIN churn_records cr ON c.customer_id = cr.customer_id
+GROUP BY c.contract, cr.is_churned;
+
+
+--12. Churn by Payment Method
+ SELECT 
+    c.payment_method, 
+    cr.is_churned, 
+    COUNT(*)
+FROM customers c
+JOIN churn_records cr ON c.customer_id = cr.customer_id
+GROUP BY c.payment_method, cr.is_churned;
+
+
+
+--13. Churn by Tenure Group 
+SELECT 
+    CASE 
+        WHEN tenure <= 12 THEN '0-1 year'
+        WHEN tenure <= 24 THEN '1-2 years'
+        WHEN tenure <= 48 THEN '2-4 years'
+        ELSE '4+ years'
+    END AS TenureGroup, 
+    cr.is_churned, 
+    COUNT(*)
+FROM customers c
+JOIN churn_records cr ON c.customer_id = cr.customer_id
+GROUP BY TenureGroup, cr.is_churned;
+
+
+--14. Churn by Internet Service Type
+ SELECT 
+    s.internet_service, 
+    cr.is_churned, 
+    COUNT(*)
+FROM customers c
+JOIN services s ON c.customer_id = s.customer_id
+JOIN churn_records cr ON c.customer_id = cr.customer_id
+GROUP BY s.internet_service, cr.is_churned;
+
+
+--15. Churn rate by Monthly Charges bracket
+SELECT CASE
+WHEN t.monthly_charge < 30 THEN '< $30'
+WHEN t.monthly_charge < 60 THEN '$30 - $60'
+WHEN t.monthly_charge < 90 THEN '$60 - $90'
+ELSE '> $90' END AS ChargeBracket,
+cr.is_churned,
+COUNT(*) AS count
+FROM transactions t
+JOIN churn_records cr ON t.customer_id = cr.customer_id
+GROUP BY ChargeBracket, cr.is_churned;
+
+
+--16. Churn rate by Total Charges bracket
+SELECT CASE 
+    WHEN t.total_charge < 500 THEN '< $500'
+    WHEN t.total_charge < 2000 THEN '$500 - $2000'
+    WHEN t.total_charge < 5000 THEN '$2000 - $5000'
+    ELSE '>= $5000'
+  END AS TotalBracket,
+  cr.is_churned,
+  COUNT(*) AS count
+FROM transactions t
+JOIN churn_records cr ON t.customer_id = cr.customer_id
+GROUP BY TotalBracket, cr.is_churned;
+
+
+--17. Churn rate by Contract + Tenure
+SELECT 
+  c.contract,
+  CASE 
+    WHEN tenure <= 12 THEN '0-1 year'
+    WHEN tenure <= 24 THEN '1-2 years'
+    WHEN tenure <= 48 THEN '2-4 years'
+    ELSE '4+ years'
+  END AS TenureGroup,
+  cr.is_churned,
+  COUNT(*) AS count
+FROM customers c
+JOIN churn_records cr ON c.customer_id = cr.customer_id
+GROUP BY c.contract, TenureGroup, cr.is_churned;
+
+
+--18. Churn By Payment Method + Internet Service
+
+SELECT 
+  s.internet_service,
+  c.payment_method,
+  cr.is_churned,
+  COUNT(*) AS count
+FROM customers c
+JOIN churn_records cr ON c.customer_id = cr.customer_id
+JOIN services s ON c.customer_id = s.customer_id
+GROUP BY s.internet_service, c.payment_method, cr.is_churned;
+
+
+
+
+
+
