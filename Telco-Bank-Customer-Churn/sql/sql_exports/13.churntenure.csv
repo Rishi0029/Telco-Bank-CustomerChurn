@@ -1,0 +1,9 @@
+TenureGroup,is_churned,COUNT(*)
+"0-1 year",0,1138
+"0-1 year",1,1037
+"1-2 years",1,294
+"4+ years",0,2026
+"2-4 years",0,1269
+"2-4 years",1,325
+"1-2 years",0,730
+"4+ years",1,213

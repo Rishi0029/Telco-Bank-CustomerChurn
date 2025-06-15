@@ -1,0 +1,7 @@
+internet_service,is_churned,COUNT(*)
+DSL,0,1980
+"Fiber optic",1,1304
+"Fiber optic",0,1835
+DSL,1,470
+No,0,1426
+No,1,121
