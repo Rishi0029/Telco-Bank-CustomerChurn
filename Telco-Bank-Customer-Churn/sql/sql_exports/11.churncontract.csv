@@ -1,0 +1,7 @@
+contract,is_churned,COUNT(*)
+"One year",0,1306
+Month-to-month,0,2220
+Month-to-month,1,1655
+"Two year",0,1637
+"One year",1,166
+"Two year",1,48

@@ -1,0 +1,25 @@
+internet_service,payment_method,is_churned,count
+DSL,"Mailed check",0,491
+"Fiber optic","Electronic check",1,853
+"Fiber optic","Mailed check",1,111
+DSL,"Credit card (automatic)",0,525
+"Fiber optic","Bank transfer (automatic)",0,469
+"Fiber optic","Credit card (automatic)",0,454
+DSL,"Electronic check",0,447
+"Fiber optic","Electronic check",0,757
+DSL,"Bank transfer (automatic)",0,517
+DSL,"Credit card (automatic)",1,75
+DSL,"Electronic check",1,214
+No,"Electronic check",0,111
+No,"Mailed check",0,666
+No,"Mailed check",1,75
+DSL,"Bank transfer (automatic)",1,54
+No,"Credit card (automatic)",0,330
+No,"Bank transfer (automatic)",0,319
+"Fiber optic","Credit card (automatic)",1,153
+No,"Electronic check",1,17
+"Fiber optic","Mailed check",0,155
+"Fiber optic","Bank transfer (automatic)",1,187
+No,"Bank transfer (automatic)",1,19
+DSL,"Mailed check",1,127
+No,"Credit card (automatic)",1,10

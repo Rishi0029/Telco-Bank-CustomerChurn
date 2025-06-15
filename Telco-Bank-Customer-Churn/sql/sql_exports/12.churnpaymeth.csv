@@ -1,0 +1,9 @@
+payment_method,is_churned,COUNT(*)
+"Mailed check",0,1296
+"Electronic check",1,1071
+"Mailed check",1,308
+"Credit card (automatic)",0,1289
+"Bank transfer (automatic)",0,1284
+"Electronic check",0,1294
+"Credit card (automatic)",1,232
+"Bank transfer (automatic)",1,258

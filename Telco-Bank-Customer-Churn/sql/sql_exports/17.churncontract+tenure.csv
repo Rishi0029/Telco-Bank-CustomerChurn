@@ -1,0 +1,23 @@
+contract,TenureGroup,is_churned,count
+"One year","0-1 year",0,110
+Month-to-month,"0-1 year",0,970
+Month-to-month,"0-1 year",1,1024
+Month-to-month,"1-2 years",1,278
+"Two year","4+ years",0,1221
+"One year","2-4 years",0,463
+"One year","2-4 years",1,55
+"One year","4+ years",0,552
+Month-to-month,"1-2 years",0,459
+"Two year","1-2 years",0,90
+"Two year","2-4 years",0,268
+Month-to-month,"4+ years",0,253
+"Two year","0-1 year",0,58
+Month-to-month,"2-4 years",0,538
+"One year","1-2 years",0,181
+Month-to-month,"2-4 years",1,264
+"One year","4+ years",1,82
+Month-to-month,"4+ years",1,89
+"One year","1-2 years",1,16
+"Two year","4+ years",1,42
+"One year","0-1 year",1,13
+"Two year","2-4 years",1,6
